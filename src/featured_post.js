@@ -6,13 +6,7 @@ let featuredPost = {
     }
   },
 
-  computed: {
-    imageTitle: function () {
-      return this.post.title.split(' ').map(function (word, index) {
-        return !index % 2 ? word : '<span>' + word + '</span>';
-      }).join(' ');
-    }
-  },
+  mixins: [Vue.config.mixins.posts],
 
   template: '<article class="card featured-post">' +
     '          <div class="row no-gutters">' +

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TCU</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../src/featured_post.js"></script>
+    <script src="../src/post.js"></script>
+</head>
+
+<body>
+
+<i class="fas fa-heart"></i>
+
+<header class="container mb-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">TCU</a>
+    </nav>
+</header>
+
+<section class="container mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="featured_post">
+                <featured_post :post="post"></featured_post>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  new Vue({
+    'el': '#featured_post',
+    data: {
+      post: {
+        image: 'https://cdn.dribbble.com/users/3390427/screenshots/6401229/2.jpg',
+        title: 'Psychedelic Boom!',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, autem debitis dignissimos doloribus fugit magni nam officia pariatur, placeat quam quod, tenetur vel voluptas? Debitis eveniet iste maxime natus sunt.',
+        link: {
+          url: '#',
+          text: 'Read more'
+        }
+      }
+    }
+  })
+</script>
+
+
+<section class="container">
+    <div class="row" id="posts">
+        <div v-for="post in posts" class="col-md-4 mb-3">
+            <post :post="post"></post>
+        </div>
+    </div>
+</section>
+
+
+<script>
+  new Vue({
+    'el': '#posts',
+    data: {
+      posts: [
+        {
+          image: 'https://cdn.dribbble.com/users/360356/screenshots/7098480/media/c96a0f1de333986451a4b66dda3a2fca.jpg',
+          title: 'Bohemian Scoop',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, autem debitis dignissimos doloribus fugit magni nam officia pariatur, placeat quam quod, tenetur vel voluptas? Debitis eveniet iste maxime natus sunt.',
+          link: {
+            text: 'Read more',
+            url: '#'
+          }
+        },
+        {
+          image: 'https://cdn.dribbble.com/users/538906/screenshots/7060148/media/1cdabfeb2191fade4c65409116eacf26.jpg',
+          title: 'Dignissimos Doloribus',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, autem debitis dignissimos doloribus fugit magni nam officia pariatur, placeat quam quod, tenetur vel voluptas? Debitis eveniet iste maxime natus sunt.',
+          link: {
+            text: 'Read more',
+            url: '#'
+          }
+        },
+        {
+          image: 'https://cdn.dribbble.com/users/2100299/screenshots/7126179/media/f75ad1fc11c1fb6ae61144d33a50f000.jpg',
+          title: 'Nocturne Videls',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, autem debitis dignissimos doloribus fugit magni nam officia pariatur, placeat quam quod, tenetur vel voluptas? Debitis eveniet iste maxime natus sunt.',
+          link: {
+            text: 'Read more',
+            url: '#'
+          }
+        }
+      ]
+    }
+  })
+</script>
+
+</body>
+</html>

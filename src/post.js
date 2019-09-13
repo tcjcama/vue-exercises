@@ -1,11 +1,4 @@
 let post = {
-  props: {
-    post: {
-      type: Object,
-      required: false
-    }
-  },
-
   mixins: [Vue.config.mixins.posts],
 
   template: '<article class="card">' +
